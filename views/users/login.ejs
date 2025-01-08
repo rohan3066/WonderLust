@@ -1,0 +1,36 @@
+<% layout("/layout/boilerplate") %>
+<div class="row mt-3">
+  <div class="badge text-bg-primary text-wrap col-6 offset-5" style="width: 9rem;height:4.5rem ;text-align:center; margin-bottom: 1.5rem;">
+    <div style="margin-top:1.3rem ; font-size: 1.5rem;">
+      LogIn
+    </div>
+  </div>
+  <div class="col-6 offset-3">
+    <form action="/login" method="post" novalidate class="needs-validation">
+      <div class="mb-3">
+        <label for="exampleInputUsername" class="form-label" >Username</label>
+        <input type="text" class="form-control" id="exampleInputUsername" name="username" aria-describedby="userHelp" required>
+        <div id="userHelp" class="form-text">Add Unique User name</div>
+        <div class="valid-feedback">
+          Nice User Name
+      </div>
+      <div class="invalid-feedback">
+          please enter uername
+      </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" id="exampleInputPassword1" required>
+        <div class="valid-feedback">
+          Strong Password!!
+      </div>
+      <div class="invalid-feedback">
+          please entet Password
+      </div>
+      </div>
+      <button type="submit" class="btn btn-primary">LOGIN</button>
+    </form>
+
+  </div>
+
+</div>

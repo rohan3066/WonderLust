@@ -1,0 +1,85 @@
+<% layout('/layout/boilerplate') %>
+<div class="row">
+    <div class="col-8 offset-2">
+        <h3>Edit Listings:</h3>
+        <form action="/listings/<%= editListing._id %>?_method=PUT" method="post" class="needs-validation" novalidate enctype="multipart/form-data">
+            <div>
+                <label for="title" class="form-label">Title</label>
+                <input name="listing[title]" id="title" class="form-control" placeholder="enter title" type="text" value="<%=editListing.title%>" required>
+                <div class="valid-feedback">
+                    Looks goood!
+                </div>
+                <div class="invalid-feedback">
+                    please enter title!
+                </div>
+            </div>
+            <div>
+                <label for="description" class="form-label">Description</label>
+                <textarea name="listing[description]" id="description" class="form-control"  type="text" required><%= editListing.description %></textarea>
+                <div class="valid-feedback">
+                    Looks goood!
+                </div>
+                <div class="invalid-feedback">
+                    please enter Description!
+                </div>
+            </div>
+            <div>
+                <label for="price" class="form-label">Price</label>
+                <input name="listing[price]" id="price" class="form-control" placeholder="enter price" type="number" value="<%= editListing.price %>" required>
+                <div class="valid-feedback">
+                    goood!
+                </div>
+                <div class="invalid-feedback">
+                    please enter Price!
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div>
+                        <label for="location" class="form-label">Location</label>
+                        <br>
+                        <input name="listing[location]" id="location" placeholder="enter location" type="text" value="<%= editListing.location %>" required>
+                        <div class="valid-feedback">
+                            Looks goood!
+                        </div>
+                        <div class="invalid-feedback">
+                            please enter Location!
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-5">
+                    <div>
+                        <label for="country" class="form-label">Country</label>
+                        <input name="listing[country]" class="form-control" id="country" placeholder="enter country" type="text" value="<%= editListing.country %>" required>
+                        <div class="valid-feedback">
+                            Looks goood!
+                        </div>
+                        <div class="invalid-feedback">
+                            please enter country!
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="mb-3 mt-3">
+                <p>Original Listing Image</p>
+                <img src="<%= editListing.image.url %>" style="height: 10rem; width:15rem;" alt="image">
+            </div>
+
+            <div>
+                <label for="image" class="form-label">Upload New Image</label>
+                <input name="listing[image]" class="form-control" placeholder="enter image" type="file" value="<%= editListing.image %>">
+                <br>
+            </div>
+            <button class="btn btn-dark btn-add">
+                Edit
+            </button>
+            <br><br><br>
+        </form>
+
+    </div>
+</div>
+
+</body>
